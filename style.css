@@ -1,0 +1,29 @@
+* {
+    font-family:sans-serif;
+  }
+body{
+    background-image: url(photo-1487088678257-3a541e6e3922.png);
+    }
+  .html {
+    background-color: rgb(228, 198, 158);
+    color: #222222;
+  }
+  .container {
+    padding: 20px;
+  }
+  
+  .magnetic {
+    display: block;
+    text-align: center;
+  }
+  
+  .judul {
+    margin-top: -10px;
+  }
+  
+  .depan {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-top: 50px;
+  }

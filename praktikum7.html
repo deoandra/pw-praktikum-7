@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 7 Deo</title>
+    <link rel="stylesheet" id="blink" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="magnetic">
+            <h1 class="judul">Praktikum 7</h1>
+        </div>
+
+        <div class="depan">
+            <div class="prov">
+ 
+                <label> Pilih Provinsi :</label> 
+                <select name="prov" id="Provinsi" onchange="escapeValue()" >
+                    <option selected> -- Pilih Provinsi Anda --</option>
+                    <option value="lamp">Lampung</option>
+                    <option value="sumbar">Sumatra Barat</option>
+                    <option value="sumsel">Sumatra Selatan</option>
+                    <option value="aceh">Aceh</option>
+                </select>
+
+            
+                <label> Pilih Kota :</label> 
+                <select name="city" id="Kota" onchange="escapeCity()">
+                    
+
+                </select>
+
+                <div class="info">
+                    <h2 id="head"> </h2>
+                </div>
+
+                <script>
+                    function myFunction(){
+                        console.log("hello World");
+                    }
+
+                    var kota1 = ["BandarLampung", "LampungTimur", "Metro", "Tanggamus","LampungBarat"];
+                    var kota2 = ["Padang", "Bukittinggi", "Pariaman", "PadangPanjang", "Solok"];
+                    var kota3 = ["Palembang", "LubukLinggau", "PagarAlam", "Prabumulih", "OganIlir"]
+                    var kota4 = ["AcehBesar", "AcehJaya", "AcehBarat", "AcehBaratDaya", "AcehTengah"]
+
+
+                    function escapeValue(){
+                        var prov1 = document.getElementById("Provinsi").value;
+                        var selectKota = "";
+                        if(prov1 == "lamp"){
+                            selectKota += "<option> -- Pilih Kota Anda --</option>";
+                            for(var i=0; i<=4; i++){
+                                selectKota += "<option";
+                                selectKota += " value = " + kota1[i] + ">";
+                                selectKota += kota1[i];
+                                selectKota += "</option>";
+                            }
+
+                            document.getElementById("Kota").innerHTML = selectKota;
+                        }
+                        else if (prov1 == "sumbar"){
+                            selectKota += "<option> -- Pilih Kota Anda --</option>";
+                            for(var i=0; i<=4; i++){
+                                selectKota += "<option";
+                                selectKota += " value = " + kota2[i] + ">";
+                                selectKota += kota2[i];
+                                selectKota += "</option>";
+                            }
+
+                            document.getElementById("Kota").innerHTML = selectKota;
+                        }
+                        else if(prov1 == "sumsel"){
+                            selectKota += "<option> -- Pilih Kota Anda --</option>";
+                            for(var i=0; i<=4; i++){
+                                selectKota += "<option";
+                                selectKota += " value = " + kota3[i] + ">";
+                                selectKota += kota3[i];
+                                selectKota += "</option>";
+                            }
+
+                            document.getElementById("Kota").innerHTML = selectKota;
+                        }
+                        else if(prov1 == "aceh"){
+                            selectKota += "<option> -- Pilih Kota Anda --</option>";
+                            for(var i=0; i<=4; i++){
+                                selectKota += "<option";
+                                selectKota += " value = " + kota4[i] + ">";
+                                selectKota += kota4[i];
+                                selectKota += "</option>";
+                            }
+
+                            document.getElementById("Kota").innerHTML = selectKota;
+                        }
+                        else{
+                            console.log("Undifined Input");
+                        }
+                    }
+
+                    function escapeCity(){
+                        var tempProv = document.getElementById("Provinsi").value; 
+                        var tempKota = document.getElementById("Kota").value;
+                        document.getElementById("head").innerHTML = (" Di Provinsi " + changeName(tempProv) + " Ada Kota " + tempKota);
+
+                    }
+
+                    function changeName(x){
+                        if(x == "lamp"){
+                            return "Lampung"; 
+                        }
+                        else if(x == "sumbar"){
+                            return "Sumatra Barat"; 
+                        }
+                        else if(x == "sumsel"){
+                            return "Sumatra Selatan"; 
+                        }
+                        else if(x == "aceh"){
+                            return "Aceh"; 
+                        }
+                        else{
+                            return "?";
+                        }
+                    }
+                                    </script>
+
+                                </div>
+                            </div>
+                        </div>
+</body>
+</html>
